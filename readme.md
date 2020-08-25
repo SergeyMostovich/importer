@@ -2,6 +2,8 @@ CSV Importer
 
 All commands run via index.php
 
+Before start run: `composer i`
+
 CLI commands:
 
 Actions:

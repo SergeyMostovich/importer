@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.1",
+    "monolog/monolog": "^2.1",
+    "ext-memcached": "^3.1",
+    "phpunit/phpunit": "^9.3"
+  }
+}

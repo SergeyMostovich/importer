@@ -1,0 +1,36 @@
+На PHP 7 применяя знания SOLID и паттернов необходимо:
+Реализовать возможность импорта пользователей из csv файла в базу данных.
+- Csv файл должен быть размером от 40mb.
+- Csv файл может содержать в себе часть не валидных данных.
+- Импорт большого числа пользователей в базу не должен повлиять на общую производительность работы.
+  Необходимо покрыть юнит тестами код на 100%.
+  Реализовать возможность поиска импортированных пользователей по ФИО или email.
+- Результат поиска должен быть кешированный.
+  Выложить исходники на github - отправить линк для проверки.
+  Использования фреймворков не допускается.
+Поля для импорта:
+ID Пользователя              int auto increment = PK
+ФИО Пользователя             varchar 32 //
+Email                       varchar 254 //
+Валюта                      char(3)  //iso code 3chars
+Сумма                       DECIMAL(15,4)
+
+sql
+
+create table if not exists users
+(
+	id int(11) auto_increment,
+	name varchar(32) not null,
+	email varchar(254) not null,
+	currency char(3) not null,
+	total decimal(15,4) not null,
+	constraint users_pk
+		primary key (id)
+);
+
+create index users_email_index
+	on users (email);
+
+create index users_name_index
+	on users (name);
+

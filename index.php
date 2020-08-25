@@ -30,7 +30,9 @@ try {
             switch ($app->getOptions()->type) {
                 case 'csv':
                     $dummyData = new DummyDataGenerator($app->getLogger());
-                    $path = __DIR__.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR.'data.csv';
+                    $folder = __DIR__.DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
+                    if (!file_exists($folder)) mkdir($folder);
+                    $path = $folder .'data.csv';
                     break;
                 default:
                     $app->getLogger()->error('Wrong file format');

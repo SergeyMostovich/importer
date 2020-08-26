@@ -2,7 +2,9 @@ CSV Importer
 
 All commands run via index.php
 
-Before start run: `composer i`
+Before start:
+    run: `composer i`
+    create `.env` from `.env-default` and fill params
 
 CLI commands:
 
